@@ -12,24 +12,15 @@
                 </tr>
             </thead>
             <tbody>
+                {% for info in leaderboards_info %}
+
                 <tr>
-                    <td>Mano</td>
+                    <td>{{info.name}}</td>
                     <td>
-                        16
+                        {{info.score}}
                     </td>
                 </tr>
-                <tr>
-                    <td>Krishna</td>
-                    <td>
-                        16
-                    </td>
-                </tr>
-                <tr>
-                    <td>Mithilesh</td>
-                    <td>
-                        16
-                    </td>
-                </tr>
+                {% endfor %}
             </tbody>
         </table>
     </div>

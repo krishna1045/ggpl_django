@@ -4,6 +4,20 @@ from django.shortcuts import render
 
 
 def home(request):
+    leaderboards_info = [
+        {
+            'name': 'Mano',
+            'score': 16
+        },
+        {
+            'name': 'Krishna',
+            'score': 16
+        },
+        {
+            'name': 'Mithilesh',
+            'score': 16
+        },
+    ]
     current_predictions = [
         {
             'name': 'Mano ',
@@ -33,4 +47,4 @@ def home(request):
             'win': 'CSK'
         },
     ]
-    return render(request, 'home/index.html', {'current_predictions': current_predictions})
+    return render(request, 'home/index.html', {'current_predictions': current_predictions, 'leaderboards_info': leaderboards_info})
