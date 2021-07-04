@@ -21,14 +21,14 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item my-xs-1 active mx-lg-2">
-                    <a class="nav-link" href="/">Home</a>
+                    <a class="nav-link" href="{% url 'home' %}">Home</a>
                 </li>
                 <li class="nav-item my-xs-1 active mx-lg-2">
-                    <a class="nav-link" href="/teams">Teams</a>
+                    <a class="nav-link" href="{% url 'teams' %}">Teams</a>
                 </li>
 
                 <li class="nav-item my-xs-1 active mx-lg-2">
-                    <a class="nav-link" href="/create">Create</a>
+                    <a class="nav-link" href="{% url 'create' %}">Create</a>
                 </li>
                 <li class="nav-item my-xs-1 active mx-lg-2">
                     <div style="cursor: pointer" class="nav-link">
