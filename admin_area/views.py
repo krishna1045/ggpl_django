@@ -4,4 +4,18 @@ from django.shortcuts import render
 
 
 def admin_area(request):
-    return render(request, 'admin_area/index.html')
+    leaderboards_info = [
+        {
+            'name': 'Mano',
+            'score': 16
+        },
+        {
+            'name': 'Krishna',
+            'score': 16
+        },
+        {
+            'name': 'Mithilesh',
+            'score': 16
+        },
+    ]
+    return render(request, 'admin_area/index.html', {'leaderboards_info': leaderboards_info})

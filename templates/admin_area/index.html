@@ -1,4 +1,92 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<div class="container">
+
+    <div id="leaderboards">
+        <p class="my-3 h1 d-flex justify-content-center">Leaderboards</p>
+        <table class="table my-3 table-bordered text-center">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for info in leaderboards_info %}
+
+                <tr>
+                    <td>{{info.name}}</td>
+                    <td>
+                        <button type="button" class="btn btn-primary btn-sm mx-2">
+                            -
+                        </button>
+                        {{ info.score }}
+                        <button type="button" class="btn btn-primary btn-sm mx-2">
+                            +
+                        </button>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col text-center justify-content-center mt-4">
+                <h3>Prediction Setting</h3>
+                <p>Status : Boolean</p>
+            </div>
+        </div>
+
+        <div class="row mt-2 text-center">
+            <div class="col justify-content-center">
+                <form @submit.prevent>
+                    <div class="form-group">
+                        <button type="submit" class="btn mx-2 btn-danger">
+                            Turn On
+                        </button>
+                        <button type="submit" class="btn btn-danger">
+                            Turn Off
+                        </button>
+                    </div>
+                    <div class="form-group">
+                        <label for="batsmanInput">Match Name</label>
+                        <input type="text" class="form-control" id="batsmanInput" />
+                    </div>
+                    <div class="form-group">
+                        <label for="bowlerInput">Match Code</label>
+                        <input type="text" class="form-control" id="bowlerInput" />
+                    </div>
+
+                    <button type="submit" class="btn btn-danger">
+                        Submit
+                    </button>
+                </form>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col justify-content-center mt-4">
+                <h3>Current Prediction Setting</h3>
+                <p>
+                    Status : Boolean
+                </p>
+            </div>
+        </div>
+        <div class="row mb-2 text-center">
+            <div class="col justify-content-start">
+                <form @submit.prevent>
+                    <div class="form-group">
+                        <button type="submit" class="btn mx-2 btn-danger">
+                            Turn On
+                        </button>
+                        <button type="submit" class="btn btn-danger">
+                            Turn Off
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock content %}
