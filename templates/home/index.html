@@ -1,5 +1,43 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Home Component</h1>
+<div class="container">
+    <div id="leaderboards">
+        <p class="my-3 h1 d-flex justify-content-center">Leaderboards</p>
+        <table class="table my-3 table-bordered">
+            <thead class="">
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Mano</td>
+                    <td>
+                        16
+                    </td>
+                </tr>
+                <tr>
+                    <td>Krishna</td>
+                    <td>
+                        16
+                    </td>
+                </tr>
+                <tr>
+                    <td>Mithilesh</td>
+                    <td>
+                        16
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="current_predictions">
+        <p class="my-3 h1 d-flex justify-content-center">Current Predictions</p>
+
+    </div>
+
+</div>
+
 {% endblock content %}
