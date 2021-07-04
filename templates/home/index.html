@@ -35,7 +35,30 @@
     </div>
     <div class="current_predictions">
         <p class="my-3 h1 d-flex justify-content-center">Current Predictions</p>
-
+        <div id="prediction-card">
+            <div class="container">
+                <div class="row">
+                    {% for cp in current_predictions %}
+                    <div class="col-xs-12 my-3 col-md-4 text-center">
+                        <div class="card shadow p-1 bg-white rounded border-0">
+                            <div class="card-body">
+                                <h3 class="card-title">{{ cp.name }}</h3>
+                                <h6 class="card-subtitle mb-2 text-muted">
+                                    {{ cp.win }}
+                                </h6>
+                                <p class="card-text"></p>
+                                <p>Batsman : {{ cp.batsman }}</p>
+                                <p>Bowler : {{ cp.bowler }}</p>
+                                <p>PP 1 : {{ cp.pp1 }}</p>
+                                <p>PP 2 : {{ cp.pp2 }}</p>
+                                <p>Score : {{ cp.score }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
     </div>
 
 </div>
