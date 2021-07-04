@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'home',
     'teams',
     'create_predictions',
+    'admin_area'
 ]
 
 MIDDLEWARE = [

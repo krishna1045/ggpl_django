@@ -7,4 +7,5 @@ urlpatterns = [
     path('', include('home.urls')),
     path('', include('teams.urls')),
     path('', include('create_predictions.urls')),
+    path('', include('admin_area.urls')),
 ]
