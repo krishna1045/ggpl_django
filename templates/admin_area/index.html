@@ -6,86 +6,87 @@
     <div id="leaderboards">
         <p class="my-3 h1 d-flex justify-content-center">Leaderboards</p>
         <table class="table my-3 table-bordered text-center">
-            <thead>
+            <thead class="">
                 <tr>
                     <th scope="col">Name</th>
                     <th scope="col">Score</th>
                 </tr>
             </thead>
             <tbody>
-                {% for info in leaderboards_info %}
-
-                <tr>
-                    <td>{{info.name}}</td>
+                <tr v-for="(player, i) in $store.state.leaderboards" :key="player.name">
+                    <td>[[ player.name ]]</td>
                     <td>
-                        <button type="button" class="btn btn-primary btn-sm mx-2">
+                        <button type="button" class="btn btn-primary btn-sm cnt" @click="update(i, '-')">
                             -
                         </button>
-                        {{ info.points }}
-                        <button type="button" class="btn btn-primary btn-sm mx-2">
+                        [[ player.points ]]
+                        <button type="button" class="btn btn-primary btn-sm cnt" @click="update(i, '+')">
                             +
                         </button>
                     </td>
                 </tr>
-                {% endfor %}
             </tbody>
+
         </table>
     </div>
-    <div class="container">
-        <div class="row">
-            <div class="col text-center justify-content-center mt-4">
-                <h3>Prediction Setting</h3>
-                <p>Status : Boolean</p>
-            </div>
+
+
+    <div class="row text-center">
+        <div class="col justify-content-center mt-4">
+            <h3>Prediction Setting</h3>
+            <p>Status : [[ $store.state.adminMatchData.isPredictionOn ]]</p>
         </div>
+    </div>
 
-        <div class="row mt-2 text-center">
-            <div class="col justify-content-center">
-                <form @submit.prevent>
-                    <div class="form-group">
-                        <button type="submit" class="btn mx-2 btn-danger">
-                            Turn On
-                        </button>
-                        <button type="submit" class="btn btn-danger">
-                            Turn Off
-                        </button>
-                    </div>
-                    <div class="form-group">
-                        <label for="batsmanInput">Match Name</label>
-                        <input type="text" class="form-control" id="batsmanInput" />
-                    </div>
-                    <div class="form-group">
-                        <label for="bowlerInput">Match Code</label>
-                        <input type="text" class="form-control" id="bowlerInput" />
-                    </div>
-
-                    <button type="submit" class="btn btn-danger">
-                        Submit
+    <div class="row mt-2 text-center">
+        <div class="col justify-content-start">
+            <form @submit.prevent>
+                <div class="form-group">
+                    <button type="submit" @click="turnOnPrediction()" class="btn mx-2 btn-danger">
+                        Turn On
                     </button>
-                </form>
-            </div>
+                    <button type="submit" @click="turnOffPrediction()" class="btn btn-danger">
+                        Turn Off
+                    </button>
+                </div>
+                <div v-if="$store.state.adminMatchData.isPredictionOn == true" class="form-group">
+                    <label for="batsmanInput">Match Name</label>
+                    <input type="text" v-model="$store.state.adminMatchData.matchName" class="form-control"
+                        id="batsmanInput" />
+                </div>
+                <div v-if="$store.state.adminMatchData.isPredictionOn == true" class="form-group">
+                    <label for="bowlerInput">Match Code</label>
+                    <input type="text" v-model="$store.state.adminMatchData.matchCode" class="form-control"
+                        id="bowlerInput" />
+                </div>
+
+                <button v-if="$store.state.adminMatchData.isPredictionOn == true" type="submit" @click="postSettings"
+                    class="btn btn-danger">
+                    Submit
+                </button>
+            </form>
         </div>
-        <div class="row text-center">
-            <div class="col justify-content-center mt-4">
-                <h3>Current Prediction Setting</h3>
-                <p>
-                    Status : Boolean
-                </p>
-            </div>
+    </div>
+    <div class="row text-center">
+        <div class="col justify-content-center mt-4">
+            <h3>Current Prediction Setting</h3>
+            <p>
+                Status : [[ $store.state.adminMatchData.isCurrentPrediction ]]
+            </p>
         </div>
-        <div class="row mb-2 text-center">
-            <div class="col justify-content-start">
-                <form @submit.prevent>
-                    <div class="form-group">
-                        <button type="submit" class="btn mx-2 btn-danger">
-                            Turn On
-                        </button>
-                        <button type="submit" class="btn btn-danger">
-                            Turn Off
-                        </button>
-                    </div>
-                </form>
-            </div>
+    </div>
+    <div class="row mb-2 text-center">
+        <div class="col justify-content-start">
+            <form @submit.prevent>
+                <div class="form-group">
+                    <button type="submit" @click="turnOnCurrentPrediction()" class="btn mx-2 btn-danger">
+                        Turn On
+                    </button>
+                    <button type="submit" @click="turnOffCurrentPrediction()" class="btn btn-danger">
+                        Turn Off
+                    </button>
+                </div>
+            </form>
         </div>
     </div>
 </div>

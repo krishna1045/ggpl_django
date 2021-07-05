@@ -1,4 +1,3 @@
-// import router from '../router/index'
 var firebaseConfig = {
     apiKey: "AIzaSyCMWY1g-tNFFUegdSgqauW3Yokf_3pAaOI",
     authDomain: "ggpl-e219f.firebaseapp.com",
@@ -228,9 +227,34 @@ const app = Vue.createApp({
     store: store,
     data() {
         return {
-            counter: 0
-        }
-    }
+
+        };
+    },
+    computed: {},
+    mounted() {
+        this.$store.commit("getLeaderboardsData");
+        this.$store.commit("getPredictionData");
+    },
+    methods: {
+        update(i, operator) {
+            this.$store.commit("updateLeaderboardsPointsData", { i, operator });
+        },
+        postSettings() {
+            this.$store.commit("postAdminSettings");
+        },
+        turnOnPrediction() {
+            this.$store.commit("turnOnPrediction");
+        },
+        turnOffPrediction() {
+            this.$store.commit("turnOffPrediction");
+        },
+        turnOnCurrentPrediction() {
+            this.$store.commit("turnOnCurrentPrediction");
+        },
+        turnOffCurrentPrediction() {
+            this.$store.commit("turnOffCurrentPrediction");
+        },
+    },
 })
 app.use(store).mount("#app")
 
