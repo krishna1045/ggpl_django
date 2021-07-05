@@ -2,10 +2,10 @@
 
 {% block content %}
 <div class="container">
-    <div class="row" id="rowCreatePredictions">
+    <div v-if="$store.state.adminMatchData.isPredictionOn == true" class="row" id="rowSignIn">
         <div class="col justify-content-center">
-            <form>
-                <h3 id="matchName" class="m-3 text-center">MI vs CSK</h3>
+            <form @submit.prevent>
+                <h3 class="text-center">[[ $store.state.adminMatchData.matchName]]</h3>
                 <div class="form-group">
                     <label for="batsmanInput">Batsman</label>
                     <input type="text" class="form-control" v-model="prediction.batsman" id="batsmanInput" />
@@ -30,12 +30,15 @@
                     <label for="winInput">Win</label>
                     <input type="text" class="form-control" v-model="prediction.win" id="winInput" />
                 </div>
-                <button type="submit" @click="addPrediction" class="sub-btn btn btn-danger">
+                <button type="submit" @click="addPrediction" class="btn btn-danger">
                     Submit
                 </button>
             </form>
         </div>
     </div>
+    <div v-else id="rowCreate" class="row justify-content-center">
+        <h3>You cannot create or edit your prediction.</h3>
+    </div>
+</div>
 
-
-    {% endblock content %}
+{% endblock content %}

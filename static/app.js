@@ -219,7 +219,7 @@ const store = Vuex.createStore({
                         state.current_prediction.push(doc.data());
                     });
                 });
-        }
+        },
     },
 })
 const app = Vue.createApp({
@@ -227,13 +227,26 @@ const app = Vue.createApp({
     store: store,
     data() {
         return {
-
+            prediction: {
+                name: this.$store.state.userData.displayName,
+                uid: this.$store.state.userData.uid,
+                batsman: "",
+                bowler: "",
+                pp1: "",
+                pp2: "",
+                win: "",
+                score: "",
+            },
         };
     },
     computed: {},
     mounted() {
         this.$store.commit("getLeaderboardsData");
+    },
+    created() {
         this.$store.commit("getPredictionData");
+
+        this.$store.commit("getAdminSettings");
     },
     methods: {
         update(i, operator) {
@@ -253,6 +266,14 @@ const app = Vue.createApp({
         },
         turnOffCurrentPrediction() {
             this.$store.commit("turnOffCurrentPrediction");
+        },
+        addPrediction() {
+            db.collection(this.$store.state.userData.uid)
+                .doc(this.$store.state.adminMatchData.matchCode)
+                .set(this.prediction);
+            db.collection("current_prediction")
+                .doc(this.$store.state.userData.uid)
+                .set(this.prediction);
         },
     },
 })
