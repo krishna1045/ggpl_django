@@ -16,11 +16,11 @@
                 <tr v-for="(player, i) in $store.state.leaderboards" :key="player.name">
                     <td>[[ player.name ]]</td>
                     <td>
-                        <button type="button" class="btn btn-primary btn-sm cnt" @click="update(i, '-')">
+                        <button type="button" class="btn btn-primary btn-sm mx-2 cnt" @click="update(i, '-')">
                             -
                         </button>
                         [[ player.points ]]
-                        <button type="button" class="btn btn-primary btn-sm cnt" @click="update(i, '+')">
+                        <button type="button" class="btn btn-primary btn-sm mx-2 cnt" @click="update(i, '+')">
                             +
                         </button>
                     </td>
