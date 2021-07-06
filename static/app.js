@@ -225,6 +225,7 @@ const store = Vuex.createStore({
     },
 })
 
+
 // Vue
 const app = Vue.createApp({
     delimiters: ["[[", "]]"],
