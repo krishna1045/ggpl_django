@@ -1,3 +1,4 @@
+// Firebase Config
 var firebaseConfig = {
     apiKey: "AIzaSyCMWY1g-tNFFUegdSgqauW3Yokf_3pAaOI",
     authDomain: "ggpl-e219f.firebaseapp.com",
@@ -11,6 +12,7 @@ firebase.initializeApp(firebaseConfig);
 
 const db = firebase.firestore();
 
+// Vuex
 const store = Vuex.createStore({
     state() {
         return {
@@ -222,6 +224,8 @@ const store = Vuex.createStore({
         },
     },
 })
+
+// Vue
 const app = Vue.createApp({
     delimiters: ["[[", "]]"],
     store: store,
