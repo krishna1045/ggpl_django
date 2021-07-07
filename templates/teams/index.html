@@ -16,7 +16,7 @@
       {% for team in teams %}
       <div class="col-xs-12 my-3 col-md-4 text-center">
         <div class="card shadow p-1 bg-white rounded border-0" :id="team">
-          {% with ''|add:team.imgSrcDj as imagePath %}
+          {% with 'teams/images/'|add:team.imgSrc as imagePath %}
           <img src="{% static imagePath %}" class="card-img-top" alt="" />
           {% endwith %}
           <div class="card-body">
