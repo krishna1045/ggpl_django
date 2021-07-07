@@ -1,3 +1,4 @@
+
 // Firebase Config
 var firebaseConfig = {
     apiKey: "AIzaSyCMWY1g-tNFFUegdSgqauW3Yokf_3pAaOI",
@@ -242,11 +243,13 @@ const app = Vue.createApp({
                 win: "",
                 score: "",
             },
+            teams: [],
         };
     },
     computed: {},
     mounted() {
         this.$store.commit("getLeaderboardsData");
+        this.$store.commit("getTeamsData");
     },
     created() {
         this.$store.commit("getPredictionData");
