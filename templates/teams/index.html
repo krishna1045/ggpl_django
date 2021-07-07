@@ -1,5 +1,192 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Teams Component</h1>
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+
+    <div class="jumbotron jumbotron-fluid text-center text-white" style="background: #dc3545;">
+        <div class="container">
+          <h1 class="display-4">Welcome to IPL teams</h1>
+          <p class="lead"><em>World's Best Cricket League.</em></p>
+        </div>
+      </div>
+
+
+      <div class="container">
+          <div class="row">
+              <div class="col-md-6 col-lg-6">
+                  
+                  <div class="card" style="width: 32rem;">
+                     {%load static%}
+                     <img class="card-img-top img-fluid" src="{% static '\teams\images\csk.jpg'%}" alt="">
+                     <div class="card-block">
+                        <div class="card-body">
+                           <h5 class="card-title"><strong>Chennai Super Kings</strong></h5>
+                            <p class="card-text"><strong>Captain:</strong>M.S.Dhoni </p>
+                            <p><strong>Vice Captain:</strong>Suresh Raina</p>
+                            <p><strong>Home Ground:</strong>M A Chidambaram</p<>
+                        </div>
+                    </div>   
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-6">
+                <div class="card" style="width: 32rem;">
+                    {%load static%}
+                    <img class="card-img-top img-fluid" src="{% static '\teams\images\dc.jpg'%}" alt="">
+                    <div class="card-block">
+                      <div class="card-body">
+                        <h5 class="card-title"><strong>Delhi Capitals</strong></h5>
+                        <p class="card-text"><strong>Captain:</strong>Shreyas Iyer </p>
+                        <p><strong>Vice Captain:</strong>Rishabh Pant</p>
+                        <p><strong>Home Ground:</strong>Arun Jaitley Stadium</p<>
+                      </div>
+                    </div>
+                 </div>
+              </div>
+
+              <div class="col-md-6 col-lg-6">
+                <div class="card" style="width: 32rem;">
+                    {%load static%}
+                    <img class="card-img-top img-fluid" src="{% static '\teams\images\kkr.jpg'%}" alt="">
+                    <div class="card-block">
+                      <div class="card-body">
+                        <h5 class="card-title"><strong>Kolkata Knight Riders</strong></h5>
+                        <p class="card-text"><strong>Captain:</strong>Eoin Morgan</p>
+                        <p><strong>Vice Captain:</strong>Dinesh Karthik</p>
+                        <p><strong>Home Ground:</strong>Eden Gardens</p<>
+                      </div>
+                    </div>
+                 </div>
+              </div>
+
+              <div class="col-md-6 col-lg-6">
+                <div class="card" style="width: 32rem;">
+                    {%load static%}
+                    <img class="card-img-top img-fluid" src="{% static '\teams\images\mi.jpg'%}" alt="">
+                    <div class="card-block">
+                      <div class="card-body">
+                        <h5 class="card-title"><strong>Mumbai Indians</strong></h5>
+                        <p class="card-text"><strong>Captain:</strong>Rohit Sharma </p>
+                        <p><strong>Vice Captain:</strong> Kieron Pollard</p>
+                        <p><strong>Home Ground:</strong>Wankhede Stadium</p<>
+                      </div>
+                    </div>
+                 </div>
+              </div>
+
+              <div class="col-md-6 col-lg-6">
+                <div class="card" style="width: 32rem;">
+                    {%load static%}
+                    <img class="card-img-top img-fluid" src="{% static '\teams\images\pbks.jpg'%}" alt="">
+                    <div class="card-block">
+                      <div class="card-body">
+                        <h5 class="card-title"><strong>Punjab Kings</strong></h5>
+                        <p class="card-text"><strong>Captain:</strong>KL Rahul </p>
+                        <p><strong>Vice Captain:</strong>Mayank Agarwal</p>
+                        <p><strong>Home Ground:</strong>PCA Stadium</p<>
+                      </div>
+                    </div>
+                 </div>
+              </div>
+
+              <div class="col-md-6 col-lg-4">
+                <div class="card" style="width: 32rem;">
+                    {%load static%}
+                    <img class="card-img-top img-fluid" src="{% static '\teams\images\rcb.jpg'%}" alt="">
+                    <div class="card-block">
+                      <div class="card-body">
+                        <h5 class="card-title"><strong>Royal Challengers Banglore</strong></h5>
+                        <p class="card-text"><strong>Captain:</strong>Virat Kohli </p>
+                        <p><strong>Vice Captain:</strong>Ab de Villiers</p>
+                        <p><strong>Home Ground</strong>Chinnaswamy Stadium</p<>
+                      </div>
+                    </div>
+                 </div>
+              </div>
+
+              <div class="col-md-6 col-lg-6">
+                <div class="card" style="width: 32rem;">
+                    {%load static%}
+                    <img class="card-img-top img-fluid" src="{% static '\teams\images\rr.png'%}" alt="">
+                    <div class="card-block">
+                      <div class="card-body">
+                        <h5 class="card-title"><strong>Rajasthan Royals</strong></h5>
+                        <p class="card-text"><strong>Captain:</strong>Sanju Samson </p>
+                        <p><strong>Vice Captain:</strong>Ben Stokes</p>
+                        <p><strong>Home Ground:</strong>Sawai Mansingh Stadium</p<>
+                      </div>
+                    </div>
+                 </div>
+              </div>
+
+              <div class="col-md-6 col-lg-6">
+                <div class="card" style="width: 32rem;">
+                    {%load static%}
+                    <img class="card-img-top img-fluid" src="{% static '\teams\images\srh.jpg'%}" alt="">
+                    <div class="card-block">
+                      <div class="card-body">
+                        <h5 class="card-title"><strong>Sunrisers Hyderabad</strong></h5>
+                        <p class="card-text"><strong>Captain:</strong>Kane Williamson </p>
+                        <p><strong>Vice Captain:</strong>RDavid Warner</p>
+                        <p><strong>Home Ground:</strong>Rahul Gandhi Stadium</p<>
+                      </div>
+                    </div>
+                 </div>
+              </div>
+
+
+
+
+          </div>
+      </div>
+
+
+ 
+
+              
+         
+
+
+
+   
+          
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
 {% endblock content %}
